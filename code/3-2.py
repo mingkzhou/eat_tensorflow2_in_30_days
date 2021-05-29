@@ -48,9 +48,10 @@ def train_model():
             loss = train_step(model, features, labels)
         if epoch%50 == 0:
             tf.print("epoch =", epoch, "loss = ", loss)
-            tf.print("w =", model.variables[0])
-            tf.print("b =", model.variables[1])
+            # tf.print("w =", model.variables[0])
+            # tf.print("b =", model.variables[1])
 
 if __name__ == '__main__':
+    tf.config.experimental_run_functions_eagerly(True)
     train_model()
 
